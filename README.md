@@ -1,0 +1,1 @@
+This project will consist in the creation of a grid template mainly using javascript, the grid will be generated and the <divs> contained within must change color when the mouse hovers over them.
