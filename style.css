@@ -1,18 +1,17 @@
-* {
-    border: 1px solid red;
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
     margin: auto;
+    padding: 1em;
+    
 }
 
 .box {
     padding: 1px;
     box-sizing: border-box;
+    border: 1px dotted gray;
 }
 
 #header {
@@ -27,4 +26,6 @@ h1 {
 
 #btn {
     margin: auto;
+    padding: 1em;
+
 }
