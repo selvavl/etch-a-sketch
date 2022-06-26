@@ -4,12 +4,12 @@ let boxes = "";
 let alphaArray = [];
 
 function createGrid() {
-    container.innerHTML = ""; //clean grid
-    alphaArray = []; // clean array for alpha color
-    gridSize = Math.round(prompt("Insert grid side size between 1 and 100", ""));
+    container.innerHTML = "";   // clean grid
+    alphaArray = [];            // clean array for alpha color
+    gridSize = Math.round(prompt("Insert grid side size between 1 and 64", ""));   // establish the size of the grid
 
-    if(gridSize <= 0 || gridSize > 100 || isNaN(gridSize) || gridSize == "") {
-        createGrid();
+    if(gridSize <= 0 || gridSize > 64 || isNaN(gridSize) || gridSize == "") {      // allow numbers only
+        createGrid();           
     }
 
     let boxQty = Math.pow(gridSize, 2);
@@ -20,7 +20,7 @@ function createGrid() {
         div.setAttribute("class", "box");
         div.style.cssText = `height: ${500/gridSize}px; width: ${500/gridSize}px;`;
         container.append(div);
-        alphaArray.push(0);
+        alphaArray.push(0);     // create an array to establish the alpha value of the filter on each box to make it darker every hover
     }
 
     boxes = document.querySelectorAll(".box");
@@ -30,12 +30,11 @@ function createGrid() {
 }
 
 function darkenBox() {
-    let id = this.getAttribute("id").slice(3);
+    let id = this.getAttribute("id").slice(3);  //get the id of the box to be used to find the value in the array
     if(alphaArray[id-1] < 1) {
-        this.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${alphaArray[id-1]}) 0 0)`;
+        this.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${alphaArray[id-1]}) 0 0)`; 
         alphaArray[id-1] += 0.1;
     }
-    console.log(id);
 }
 
 let colorValue = "";
