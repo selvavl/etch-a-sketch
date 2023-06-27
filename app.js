@@ -9,9 +9,10 @@ function createGrid() {
     gridSize = Math.round(prompt("Insert grid side size between 1 and 64", ""));   // establish the size of the grid
 
     if(gridSize <= 0 || gridSize > 64 || isNaN(gridSize) || gridSize == "") {      // allow numbers only
-        createGrid();           
+        alert("Invalid value, must enter a number between 1 and 64");
+        return;           
     }
-
+    
     let boxQty = Math.pow(gridSize, 2);
 
     for(let i = 1 ; i <= boxQty ; i++) {

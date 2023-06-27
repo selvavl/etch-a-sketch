@@ -1,3 +1,6 @@
+body {
+    background-color: cornsilk;
+}
 #container {
     display: flex;
     flex-wrap: wrap;
